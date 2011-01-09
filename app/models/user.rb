@@ -16,5 +16,18 @@ class User < ActiveRecord::Base
   def self.to_check_before(time_to_check)   
     where("users.seconds_since_midnight < ?", time_to_check.seconds_since_midnight)  
   end  
-    
+
+  def self.check_weather_and_email_users
+    users = User.confirmed & User.to_check_before(Time.now)
+    users.each { |u|
+      client = YahooWeather::Client.new
+      #could cache the responses rather than checking every woeideid?
+      weather_response = client.lookup_by_woeid(u.woeid)
+      if RAINING_CODES.include?(weather_response.condition.code) or true
+        ReminderMailer.send_reminder(u)
+      end
+    }
+  end # check_weather_and_email_users
+  
+   
 end

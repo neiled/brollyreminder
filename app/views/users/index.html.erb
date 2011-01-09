@@ -1,7 +1,10 @@
 <%= semantic_form_for @user do |f| %>
-  <%= f.input :email_address %>
-  <%= f.input :location_string %>
-  <%= f.input :time_zone_string %>
+  <%= f.input :email_address, :label => "Email" %>
+  <%= f.input :location_string, :label => "Location" %>
   <%= f.input :time, :as => :time %>
-  <%= f.buttons %>
+  <%= f.input :time_zone_string, :label => "Time Zone" %>
+  <% f.buttons do %>
+    <%= f.commit_button :label => "Create Reminder" %>
+  <% end %>
+
 <% end %>
