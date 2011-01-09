@@ -10,6 +10,7 @@ gem 'formtastic'
 gem 'geoplanet'
 gem 'rails3-jquery-autocomplete', :git => "git://github.com/neiled/rails3-jquery-autocomplete.git"
 gem "yahoo-weather"
+gem 'chronic'
 
 group :test, :development do
   gem "shoulda"
