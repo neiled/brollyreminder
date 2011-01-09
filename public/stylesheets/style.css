@@ -1,0 +1,104 @@
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}del,ins{text-decoration:none;}
+
+
+html,body
+{
+  background-color: rgb(240,240,240);
+}
+
+#header
+{
+  background: #60A7FE url(/images/main_logo.png) no-repeat scroll 50% 0;
+  width: 100%;
+  height: 797px;
+  margin: 0 auto;
+}
+
+#main
+{
+  width: 100%;
+  background: #60A7FE url(/images/main_logo_bottom.png) no-repeat scroll 50% 0;
+  margin: 0 auto;
+  height: 1020px;
+}
+
+
+#main_content 
+{
+  padding: 0em;
+  color: black;
+  font-family: "Arial Rounded MT Bold", Arial;
+  font-size: 2em;
+  text-align: center;
+  width: 960px;
+  height: 920px;
+  margin: 0 auto;
+}
+
+.tagline
+{
+  text-align: right;
+  margin-right: 15em;
+  padding: 0;
+  font-size: 50%;
+}
+
+#apps ul
+{
+  height: 200px;
+}
+
+#apps li
+{
+  list-style: none;
+  margin-top: 1.5em;
+}
+
+#address
+{
+  margin: 1em;
+  font-size: 75%;
+}
+
+
+#footer
+{
+  width: 100%;
+  background-image: url(/images/blue_footer.png);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-attachment: scroll;  
+  height: 100px;
+  color: white;
+  font-family: "Verdana";
+  font-size: 0.75em;
+  text-align: center;
+}
+
+#footer_content
+{
+  margin: 0 auto;
+  font-size: 0.75em;
+  width: 960px;
+}
+
+#copyright
+{
+  margin-top: 2.5em;
+  float: left;
+  display: inline; /* double margin bug */  
+}
+
+#links
+{
+  margin-top: 2.5em;
+  float: right;
+  display: inline; /* double margin bug */  
+}
+
+a:link, a:visited
+{
+  color: black;
+}
+
+

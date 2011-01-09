@@ -1,0 +1,7 @@
+<div class="flash row center">
+  <%= flash.each do |key, value| %>
+    <div id="flash_<%= key %>"> 
+      <%= html_escape value %>
+    </div>
+  <% end %>
+</div>

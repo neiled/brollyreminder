@@ -1,4 +1,10 @@
 Brollyreminder::Application.routes.draw do
+  root :to => "users#index"
+
+  resources :users
+
+  match 'poll' => 'users#check_weather_and_email_users', :as => :poll
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
