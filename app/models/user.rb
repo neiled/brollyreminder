@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   scope :confirmed, where(:confirmed => true)
 
+  validates_presence_of :email_address, :location_string
+
   attr_accessor :time
 
   def set_woeid
