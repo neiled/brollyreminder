@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110105203015) do
+ActiveRecord::Schema.define(:version => 20110113200254) do
 
   create_table "users", :force => true do |t|
     t.string  "email_address"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110105203015) do
     t.integer "time_zone_offset"
     t.integer "woeid"
     t.integer "seconds_since_midnight"
+    t.string  "confirm_guid"
   end
 
 end

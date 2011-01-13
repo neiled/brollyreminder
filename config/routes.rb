@@ -4,6 +4,9 @@ Brollyreminder::Application.routes.draw do
   resources :users
 
   match 'poll' => 'users#check_weather_and_email_users', :as => :poll
+  match 'thanks' => 'users#thank', :as => :thank
+
+  match 'confirm/:guid/:id' => 'users#confirm', :as => :confirm
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

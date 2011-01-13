@@ -11,12 +11,28 @@ class UsersController < ApplicationController
             )
   end
 
+  def thank
+
+  end
+
   def create
     @user = User.new(params[:user])
 
-    @user.save
-    redirect_to :action => :index
+    if @user.save
+      ReminderMailer.send_confirmation(@user)
+      redirect_to :action => :thank
+    else
+      render :action => :index
+    end
   end
+
+  def confirm
+    @users = User.find_by_id(params[:id]) & User.find_by_confirm_guid(params[:guid])
+    @user = @users.first
+    @user.confirmed = true
+    @user.save!
+  end # confirm
+  
 
 
 end

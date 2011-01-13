@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  before_create :set_woeid, :set_time
+  before_create :set_woeid, :set_time, :set_confirm_guid
 
   scope :confirmed, where(:confirmed => true)
 
@@ -19,6 +19,11 @@ class User < ActiveRecord::Base
     parsed_time = Chronic.parse(self.time)
     self.seconds_since_midnight = parsed_time.getgm.seconds_since_midnight
   end # set_time
+
+  def set_confirm_guid
+    self.confirm_guid = UUIDTools::UUID.random_create.to_s
+  end # set_confirm_guid
+  
   
 
   def self.to_check_before(time_to_check)   

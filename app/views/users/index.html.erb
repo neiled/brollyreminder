@@ -3,7 +3,7 @@
   <%= f.input :location_string, :label => "Location", :input_html => { :placeholder => "Zipcode or city"} %>
   <%= f.input :time, :as => :select, :collection => @times, :include_blank => false %>
   <%= f.input :time_zone_string, :label => "Time Zone" %>
-  <% f.buttons do %>
+  <%= f.buttons do %>
     <%= f.commit_button :label => "Create Reminder" %>
   <% end %>
 
