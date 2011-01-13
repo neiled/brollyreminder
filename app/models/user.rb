@@ -27,8 +27,8 @@ class User < ActiveRecord::Base
   
 
   def self.to_check_before(time_to_check)   
-    where("users.seconds_since_midnight < ?", \
-          time_to_check.seconds_since_midnight)  
+    where("users.seconds_since_midnight < ? and (users.last_reminder_sent_at < ? or users.last_reminder_sent_at is null)", \
+          time_to_check.seconds_since_midnight, 2.hours.ago)  
   end  
 
   def self.check_weather_and_email_users
@@ -40,6 +40,8 @@ class User < ActiveRecord::Base
       weather_response = client.lookup_by_woeid(u.woeid)
       if RAINING_CODES.include?(weather_response.condition.code) or true
         ReminderMailer.send_reminder(u).deliver
+        u.last_reminder_sent_at = DateTime.now
+        u.save!
       end
     }
   end # check_weather_and_email_users

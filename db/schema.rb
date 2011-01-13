@@ -10,17 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110113200254) do
+ActiveRecord::Schema.define(:version => 20110113230051) do
 
   create_table "users", :force => true do |t|
-    t.string  "email_address"
-    t.boolean "confirmed"
-    t.string  "time_zone_string"
-    t.string  "location_string"
-    t.integer "time_zone_offset"
-    t.integer "woeid"
-    t.integer "seconds_since_midnight"
-    t.string  "confirm_guid"
+    t.string   "email_address"
+    t.boolean  "confirmed"
+    t.string   "time_zone_string"
+    t.string   "location_string"
+    t.integer  "time_zone_offset"
+    t.integer  "woeid"
+    t.integer  "seconds_since_midnight"
+    t.string   "confirm_guid"
+    t.datetime "last_reminder_sent_at"
   end
 
 end
