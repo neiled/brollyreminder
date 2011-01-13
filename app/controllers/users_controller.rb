@@ -27,10 +27,15 @@ class UsersController < ApplicationController
   end
 
   def confirm
-    @users = User.find_by_id(params[:id]) & User.find_by_confirm_guid(params[:guid])
-    @user = @users.first
-    @user.confirmed = true
-    @user.save!
+    @user = User.find_by_id(params[:id])
+    if @user.confirm_guid = params[:guid]
+      @user.confirmed = true
+      flash[:notice] = "Great you're confirmed!"
+      @user.save!
+    else
+      flash[:error] = "That doesn't seem to be the correct link to confirm, please try again"
+      redirect_to :action => :index
+    end
   end # confirm
   
 
