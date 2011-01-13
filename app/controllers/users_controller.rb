@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      ReminderMailer.send_confirmation(@user)
+      ReminderMailer.send_confirmation(@user).deliver
       redirect_to :action => :thank
     else
       render :action => :index

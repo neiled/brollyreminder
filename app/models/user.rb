@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
       #could cache the responses rather than checking every woeideid?
       weather_response = client.lookup_by_woeid(u.woeid)
       if RAINING_CODES.include?(weather_response.condition.code) or true
-        ReminderMailer.send_reminder(u)
+        ReminderMailer.send_reminder(u).deliver
       end
     }
   end # check_weather_and_email_users
