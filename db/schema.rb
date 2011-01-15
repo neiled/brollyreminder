@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110113230051) do
+ActiveRecord::Schema.define(:version => 20110115180925) do
 
   create_table "users", :force => true do |t|
     t.string   "email_address"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20110113230051) do
     t.integer  "seconds_since_midnight"
     t.string   "confirm_guid"
     t.datetime "last_reminder_sent_at"
+    t.integer  "hour_gmt"
   end
 
 end

@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
     Chronic.time_class = Time.zone
     parsed_time = Chronic.parse(self.time)
     self.seconds_since_midnight = parsed_time.getgm.seconds_since_midnight
+    self.hour_gmt = parsed_time.getgm.hour
   end # set_time
 
   def set_confirm_guid
@@ -27,8 +28,7 @@ class User < ActiveRecord::Base
   
 
   def self.to_check_before(time_to_check)   
-    where("users.seconds_since_midnight < ? and (users.last_reminder_sent_at < ? or users.last_reminder_sent_at is null)", \
-          time_to_check.seconds_since_midnight, 2.hours.ago)  
+    where("users.hour_gmt = ?", (time_to_check + 1.hour).hour)  
   end  
 
   def self.check_weather_and_email_users
@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
       client = YahooWeather::Client.new
       #could cache the responses rather than checking every woeideid?
       weather_response = client.lookup_by_woeid(u.woeid)
-      if RAINING_CODES.include?(weather_response.condition.code) or true
+      if RAINING_CODES.include?(weather_response.condition.code)
         ReminderMailer.send_reminder(u).deliver
         u.last_reminder_sent_at = DateTime.now
         u.save!
