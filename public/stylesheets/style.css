@@ -1,14 +1,19 @@
 html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}del,ins{text-decoration:none;}
 
 
-html,body
-{
-  background-color: rgb(240,240,240);
+body {
+  padding: 0;
+  margin: 0;
+  background: #60A7FE url(/images/main_logo_all.png) no-repeat center top;
+
+  width: 100%;
+  display: table;
 }
+
 
 #header
 {
-  background: #60A7FE url(/images/main_logo.png) no-repeat scroll 50% 0;
+  /*background: #60A7FE url(/images/main_logo.png) no-repeat scroll 50% 0;*/
   width: 100%;
   height: 797px;
   margin: 0 auto;
@@ -17,7 +22,7 @@ html,body
 #main
 {
   width: 100%;
-  background: #60A7FE url(/images/main_logo_bottom.png) no-repeat scroll 50% 0;
+  /*background: #60A7FE url(/images/main_logo_bottom.png) no-repeat scroll 50% 0;*/
   margin: 0 auto;
   height: 1020px;
 }
@@ -28,11 +33,18 @@ html,body
   padding: 0em;
   color: black;
   font-family: "Arial Rounded MT Bold", Arial;
-  font-size: 2em;
-  text-align: center;
-  width: 960px;
+  font-size: 1.8em;
+  width: 260px;
   height: 920px;
   margin: 0 auto;
+}
+
+label {
+  display: block;
+}
+
+.required label {
+  font-weight: bold;
 }
 
 .tagline
@@ -43,22 +55,98 @@ html,body
   font-size: 50%;
 }
 
-#apps ul
-{
+fieldset.buttons {
+  background: inherit;
+  border: 0;
+  padding: 0; }
+
+fieldset.buttons li {
+  display: inline; }
+
+/* Text fields */
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  font-size: inherit;
+  padding: 3px 2px;
+  width: 300px; }
+
+.ie6 input {
+  vertical-align: text-bottom; }
+
+input[disabled='disabled'] {
+  background-color: #fcfcfc;
+  cursor: default; }
+
+input[type="checkbox"] {
+  margin: 0 3px 0 0;
+  position: relative;
+  top: -2px;
+  vertical-align: middle; }
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline; }
+
+input[type="radio"] {
+  margin: 0 3px 0 0;
+  position: relative;
+  top: -2px;
+  vertical-align: middle; }
+
+.check_boxes label {
+  display: inline;
+  padding: 0;
+  vertical-align: middle; }
+
+.radio label {
+  padding: 0; }
+
+/* Textareas */
+textarea {
+  font-size: inherit;
   height: 200px;
-}
+  margin: 0 0.5em 0.5em 0;
+  padding: 5px;
+  width: 440px;
+  overflow: auto; }
 
-#apps li
-{
-  list-style: none;
-  margin-top: 1.5em;
-}
+/* Select fields */
+fieldset .select select {
+  width: 200px;
+  font-size: 0.9em; }
 
-#address
-{
-  margin: 1em;
-  font-size: 75%;
-}
+optgroup {
+  margin: 0 0 .5em 0; }
+
+/* Date & Time */
+form ol li.date ol li,
+form ol li.time ol li {
+  display: inline; }
+
+form ol li.datetime ol li {
+  display: inline-block; }
+
+form ol li.datetime select,
+form ol li.date select,
+form ol li.time select {
+  display: inline;
+  width: auto; }
+
+form ol li.date label,
+form ol li.time label {
+  display: none; }
 
 
 #footer
