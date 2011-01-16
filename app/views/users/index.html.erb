@@ -1,3 +1,4 @@
+<div id="reminder_form">
 <%= semantic_form_for @user do |f| %>
   <%= f.input :email_address, :as => :email, :label => "Email", :input_html => { :placeholder => "Email Address"} %>
   <%= f.input :location_string, :label => "Location", :input_html => { :placeholder => "Zipcode or city"} %>
@@ -8,3 +9,4 @@
   <% end %>
 
 <% end %>
+</div>

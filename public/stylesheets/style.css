@@ -34,8 +34,14 @@ body {
   color: black;
   font-family: "Arial Rounded MT Bold", Arial;
   font-size: 1.8em;
-  width: 260px;
   height: 920px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#reminder_form
+{
+  width: 260px;
   margin: 0 auto;
 }
 
