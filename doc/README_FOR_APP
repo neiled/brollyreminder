@@ -1,2 +1,2 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+change width of div on the thanks screen, too narrow at present
+change description of time screen so more obvious it's the time the reminder will be sent

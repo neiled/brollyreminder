@@ -34,14 +34,19 @@ class User < ActiveRecord::Base
   def self.check_weather_and_email_users
     #Time.now needs to be in the users time zone for checking
     users = User.confirmed & User.to_check_before(Time.now.getgm)
+    puts "Found #{users.count} to check weather for"
     users.each { |u|
       client = YahooWeather::Client.new
       #could cache the responses rather than checking every woeideid?
       weather_response = client.lookup_by_woeid(u.woeid)
+      puts "Weather: #{weather_response.condition.text}"
       if RAINING_CODES.include?(weather_response.condition.code)
+        puts "Sending email!"
         ReminderMailer.send_reminder(u, weather_response).deliver
         u.last_reminder_sent_at = DateTime.now
         u.save!
+      else
+        puts "Not sending an email"
       end
     }
   end # check_weather_and_email_users
