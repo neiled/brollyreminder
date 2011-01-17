@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def confirm
     @user = User.find_by_id(params[:id])
-    if @user.confirm_guid == params[:guid]
+    if @user and @user.confirm_guid == params[:guid]
       @user.confirmed = true
       @user.save!
     else
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
   def cancel
     @user = User.find_by_id(params[:id])
-    if @user.confirm_guid == params[:guid]
+    if @user and @user.confirm_guid == params[:guid]
       @user.destroy
     else
       flash[:error] = "That doesn't seem to be the correct link to cancel, please try again"
