@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   def cancel
     @user = User.find_by_id(params[:id])
     if @user.confirm_guid == params[:guid]
-      @user.destroy!
+      @user.destroy
     else
       flash[:error] = "That doesn't seem to be the correct link to cancel, please try again"
       redirect_to :action => :index
