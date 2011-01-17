@@ -7,6 +7,7 @@ Brollyreminder::Application.routes.draw do
   match 'thanks' => 'users#thank', :as => :thank
 
   match 'confirm/:guid/:id' => 'users#confirm', :as => :confirm
+  match 'cancel/:guid/:id' => 'users#cancel', :as => :cancel
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
