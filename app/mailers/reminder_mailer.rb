@@ -1,8 +1,9 @@
 class ReminderMailer < ActionMailer::Base
   default :from => "noreply@brollyreminder.com"
 
-  def send_reminder(user)
-    @cancel_url = "http://brollyreminder.com/cancel/#{user.id}/#{user.email_address}/"
+  def send_reminder(user, weather_response)
+    @cancel_url = cancel_url(:guid => user.confirm_guid, :id => user.id)
+    @page_url = weather_response.page_url
     mail(:to => user.email_address, \
          :subject => "Take your brolly - it's going to rain today.")
   end # send_reminder(user)
