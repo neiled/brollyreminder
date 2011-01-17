@@ -7,12 +7,14 @@
     <h1>Today is a brolly day.</h1>
     <p>Sorry to be the bearer of bad news (unless you're a duck) but it looks like
     it's going to rain today where you are, best take your brolly eh?</p>
-    More weather information <%= @page_url %>.
+    <p>More weather information:</p>
+    <p><%= @page_url %></p>
     
-    <p>Good luck out there,<br/>BrollyReminder.com</p>
+    <p>Stay Dry,<br/>BrollyReminder.com</p>
+    <br/>
     <p>You're receiving this email because you signed up for an alert at
-    BrollyReminder.com - if you'd like to cancel them use this link: <%= @cancel_url %>
-    </p>
+    BrollyReminder.com - if you'd like to cancel them use this link:</p>
+    <p><%= @cancel_url %></p>
   </body>
 </html>
 
