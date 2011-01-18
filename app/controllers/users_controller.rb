@@ -15,6 +15,17 @@ class UsersController < ApplicationController
 
   end
 
+
+  def search
+    GeoPlanet.appid = YAHOO_APP_ID
+    all_results = GeoPlanet::Place.search(params[:location])
+    @geo_result = all_results ? all_results.first : nil
+    respond_to do |format|
+      format.json {render :json => @geo_result}
+    end
+  end # search
+  
+
   def create
     @user = User.new(params[:user])
 

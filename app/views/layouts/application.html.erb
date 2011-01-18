@@ -40,20 +40,19 @@
 </head>
 
 <body>
-    <div id="container">
-      <div id="header">
-        <%= render :partial => 'shared/header' %>
-        <%= render :partial=> 'shared/flashes' %>
-        <%= yield :heading %>
-      </div>	<!-- end of heading -->
-      <div id="main">
-        <div id="main_content">
-          <%= yield %>
-        </div>
-       <div id="footer">
+  <div id="container">
+    <div id="header">
+      <%= render :partial => 'shared/header' %>
+      <%= render :partial=> 'shared/flashes' %>
+      <%= yield :heading %>
+    </div>	<!-- end of heading -->
+    <div id="main">
+      <div id="main_content">
+        <%= yield %>
+      </div>
+      <div id="footer">
       </div> 
-     </div> <!-- end of main -->
-    </div> <!-- end of container -->
+    </div><!-- end of main -->
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
@@ -101,7 +100,7 @@
   <a title="Web Statistics" href="http://getclicky.com/66372858"></a>
   <noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66372858ns.gif" /></p></noscript>
 
-</div> <!-- end of footer --> 
+</div> <!-- end of container --> 
 </body>
 </html>
 

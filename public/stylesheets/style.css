@@ -59,10 +59,19 @@ h2
   width: 550px;
   margin: 0 auto;
 }
+.icon
+{
+  float:right;
+}
 
 fieldset
 {
   background-color:#D5EBFB;
+}
+
+fieldset ol li
+{
+  clear:both;
 }
 
 #time_settings
@@ -73,19 +82,24 @@ fieldset
 
 #time_settings label
 {
-  float: left;
   display: inline;
   padding-right: 1em;
-  width: 150px;
+  width: 100px;
 }
 
 #time_settings select
 {
-  float: left;
+  width: auto;
+}
+
+#search_result
+{
+  font-size: 0.8em;
 }
 
 label {
   display: block;
+  vertical-align:middle;
 }
 
 .required label {

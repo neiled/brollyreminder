@@ -1,8 +1,36 @@
+<%= content_for :javascript do %>
+<script>
+$("#user_location_string").focusout(function() {
+  var current_location = $("#user_location_string").val();
+  if(current_location.length > 0)
+  {
+    $.getJSON('<%= search_url %>?location=' + current_location, function(data) {
+      var result_string = "Couldn't find location :(";
+      if(data != null)
+      {
+        result_string = data.locality1+", "+data.admin2+", " + data.admin1;
+      }
+      $("#search_result").html(result_string);
+      $("#search_result").fadeIn();
+      
+    });
+  }
+});
+
+$("#user_location_string").bind('input', function() {
+  $("#search_result").hide();
+});
+</script>
+<% end %>
+
+
+
 <div id="reminder_form">
   <%= semantic_form_for @user do |f| %>
     <%= f.inputs do %>
     <%= f.input :email_address, :as => :email, :label => "Email", :input_html => { :placeholder => "Email Address"} %>
     <%= f.input :location_string, :label => "Location", :input_html => { :placeholder => "Zipcode or city"} %>
+    <p id="search_result" style="display:none"></p>
     <div id ="time_settings">
       <%= f.input :time, :label => "Reminder time", :as => :select, :collection => @times, :include_blank => false %>
       <%= f.input :time_zone_string, :label => "Time Zone" %>
@@ -13,3 +41,5 @@
   <% end %>
   <% end %>
 </div>
+
+

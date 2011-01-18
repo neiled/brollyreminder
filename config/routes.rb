@@ -5,6 +5,7 @@ Brollyreminder::Application.routes.draw do
 
   match 'poll' => 'users#check_weather_and_email_users', :as => :poll
   match 'thanks' => 'users#thank', :as => :thank
+  match 'search' => 'users#search', :as => :search
 
   match 'confirm/:guid/:id' => 'users#confirm', :as => :confirm
   match 'cancel/:guid/:id' => 'users#cancel', :as => :cancel
