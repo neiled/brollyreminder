@@ -1,6 +1,3 @@
-html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}del,ins{text-decoration:none;}
-
-
 body {
   padding: 0;
   margin: 0;
@@ -10,6 +7,23 @@ body {
   display: table;
 }
 
+h1
+{
+  font-size: 1.8em;
+  padding-bottom: 0.5em;
+}
+
+h2
+{
+  font-style: italic;
+  font-size: 1.2em;
+  padding-bottom: 0.5em;
+}
+
+#containers
+{
+  display: inline-block;
+}
 
 #header
 {
@@ -37,12 +51,37 @@ body {
   height: 920px;
   width: 75%;
   margin: 0 auto;
+  overflow:hidden;
 }
 
 #reminder_form
 {
-  width: 260px;
+  width: 550px;
   margin: 0 auto;
+}
+
+fieldset
+{
+  background-color:#D5EBFB;
+}
+
+#time_settings
+{
+  font-size: 0.5em;
+  overflow:hidden;
+}
+
+#time_settings label
+{
+  float: left;
+  display: inline;
+  padding-right: 1em;
+  width: 150px;
+}
+
+#time_settings select
+{
+  float: left;
 }
 
 label {
@@ -60,100 +99,6 @@ label {
   padding: 0;
   font-size: 50%;
 }
-
-fieldset.buttons {
-  background: inherit;
-  border: 0;
-  padding: 0; }
-
-fieldset.buttons li {
-  display: inline; }
-
-/* Text fields */
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="range"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"] {
-  font-size: inherit;
-  padding: 3px 2px;
-  width: 300px; }
-
-.ie6 input {
-  vertical-align: text-bottom; }
-
-input[disabled='disabled'] {
-  background-color: #fcfcfc;
-  cursor: default; }
-
-input[type="checkbox"] {
-  margin: 0 3px 0 0;
-  position: relative;
-  top: -2px;
-  vertical-align: middle; }
-
-.ie7 input[type="checkbox"] {
-  vertical-align: baseline; }
-
-input[type="radio"] {
-  margin: 0 3px 0 0;
-  position: relative;
-  top: -2px;
-  vertical-align: middle; }
-
-.check_boxes label {
-  display: inline;
-  padding: 0;
-  vertical-align: middle; }
-
-.radio label {
-  padding: 0; }
-
-/* Textareas */
-textarea {
-  font-size: inherit;
-  height: 200px;
-  margin: 0 0.5em 0.5em 0;
-  padding: 5px;
-  width: 440px;
-  overflow: auto; }
-
-/* Select fields */
-fieldset .select select {
-  width: 200px;
-  font-size: 0.9em; }
-
-optgroup {
-  margin: 0 0 .5em 0; }
-
-/* Date & Time */
-form ol li.date ol li,
-form ol li.time ol li {
-  display: inline; }
-
-form ol li.datetime ol li {
-  display: inline-block; }
-
-form ol li.datetime select,
-form ol li.date select,
-form ol li.time select {
-  display: inline;
-  width: auto; }
-
-form ol li.date label,
-form ol li.time label {
-  display: none; }
-
 
 #footer
 {
