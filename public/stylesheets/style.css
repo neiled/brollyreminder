@@ -128,6 +128,11 @@ label {
   text-align: center;
 }
 
+#footer p
+{
+  padding-top:5em;
+}
+
 #footer_content
 {
   margin: 0 auto;

@@ -24,7 +24,9 @@ $("#user_location_string").bind('input', function() {
 <% end %>
 
 
-
+<p>
+Just enter your details below and we'll send you a reminder every day we think it's going to rain. That way you'll remember your brolly and hopefully stay dry!
+</p>
 <div id="reminder_form">
   <%= semantic_form_for @user do |f| %>
     <%= f.inputs do %>
@@ -38,8 +40,15 @@ $("#user_location_string").bind('input', function() {
     <%= f.buttons do %>
       <%= f.commit_button :label => "Create Reminder" %>
     <% end %>
+  <p>
+  We won't use your email address for anything apart from reminders, promise!
+  </p>
   <% end %>
   <% end %>
 </div>
 
-
+<%= content_for :footer do %>
+  <p>
+  Created by Neil Edwards 2011 <a href="http://twitter.com/neiled">@neiled</a>
+  </p>
+<% end %>
