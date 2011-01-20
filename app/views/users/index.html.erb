@@ -8,7 +8,19 @@ $("#user_location_string").focusout(function() {
       var result_string = "Couldn't find location :(";
       if(data != null)
       {
-        result_string = data.locality1+", "+data.admin2+", " + data.admin1;
+        result_string = "";
+        if(data.locality1.length > 0)
+        {
+          result_string = data.locality1+", "
+        }
+        if(data.admin2.length > 0)
+        {
+          result_string = result_string +data.admin2+", "
+        }
+        if(data.admin1.length > 0)
+        {
+          result_string = result_string + data.admin1;
+        }
       }
       $("#search_result").html(result_string);
       $("#search_result").fadeIn();
