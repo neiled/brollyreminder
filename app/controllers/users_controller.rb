@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    response.headers['Cache-Control'] = 'public, max-age=300' 
     @user = User.new
     @times = ["12:00 am"].concat(\
               (1..11).map{ |t| t.to_s + ":00 am" }.concat( \
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def thank
+    response.headers['Cache-Control'] = 'public, max-age=300' 
 
   end
 
