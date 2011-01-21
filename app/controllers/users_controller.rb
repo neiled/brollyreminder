@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  def index
-    response.headers['Cache-Control'] = 'public, max-age=300' 
-    @user = User.new
+  before_filter :create_times, :only => [:index, :create]
+
+  def create_times
     @times = ["12:00 am"].concat(\
               (1..11).map{ |t| t.to_s + ":00 am" }.concat( \
                 ["12:00 pm"].concat(
@@ -10,6 +10,11 @@ class UsersController < ApplicationController
                 )
               )
             )
+  end
+
+  def index
+    response.headers['Cache-Control'] = 'public, max-age=300' 
+    @user = User.new
   end
 
   def thank
