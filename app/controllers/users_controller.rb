@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    response.headers['Cache-Control'] = 'public, max-age=300' 
     @user = User.new
   end
 
