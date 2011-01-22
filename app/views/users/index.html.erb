@@ -6,8 +6,10 @@ $("#user_location_string").focusout(function() {
   {
     $.getJSON('<%= search_url %>?location=' + current_location, function(data) {
       var result_string = "Couldn't find location :(";
+      $('#user_submit').attr('disabled', 'disabled');
       if(data != null)
       {
+        $('#user_submit').attr('disabled', 'enabled');
         result_string = "";
         if(data.locality1.length > 0)
         {
