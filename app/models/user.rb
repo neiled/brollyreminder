@@ -9,8 +9,10 @@ class User < ActiveRecord::Base
 
   def set_woeid
     GeoPlanet.appid = YAHOO_APP_ID
-    p = GeoPlanet::Place.search(self.location_string).first
-    self.woeid = p.woeid
+    p = GeoPlanet::Place.search(self.location_string)
+    if p
+      self.woeid = p.first.woeid
+    end
   end # set_woeid
 
   def set_time
