@@ -9,7 +9,7 @@ $("#user_location_string").focusout(function() {
       $('#user_submit').attr('disabled', 'disabled');
       if(data != null)
       {
-        $('#user_submit').attr('disabled', 'enabled');
+        $('#user_submit').removeAttr('disabled');
         result_string = "";
         if(data.locality1.length > 0)
         {
