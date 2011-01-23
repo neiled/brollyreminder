@@ -27,7 +27,6 @@ h2
 
 #header
 {
-  /*background: #60A7FE url(/images/main_logo.png) no-repeat scroll 50% 0;*/
   width: 100%;
   height: 797px;
   margin: 0 auto;
@@ -36,7 +35,6 @@ h2
 #main
 {
   width: 100%;
-  /*background: #60A7FE url(/images/main_logo_bottom.png) no-repeat scroll 50% 0;*/
   margin: 0 auto;
   height: 1020px;
 }
@@ -58,6 +56,14 @@ h2
 {
   width: 550px;
   margin: 0 auto;
+}
+
+#facebook
+{
+  margin: 0 auto;
+  width: 500px;
+  padding:25px;
+  background-color:#D5EBFB;
 }
 .icon
 {
